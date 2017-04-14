@@ -14,7 +14,7 @@ namespace ZipfItUp.Models
         }
         [Key, Column(Order = 0)]
         public int Id { get; set; }
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 1), Index(IsUnique = true)]
         public string WordString { get; set; }
         public long Occurances { get; set; }
         public decimal Percent { get; set; }

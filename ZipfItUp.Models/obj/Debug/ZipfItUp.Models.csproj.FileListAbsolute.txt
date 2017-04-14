@@ -1,0 +1,10 @@
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\ZipfItUp.Models.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\ZipfItUp.Models.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\EntityFramework.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\EntityFramework.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\obj\Debug\ZipfItUp.Models.csprojResolveAssemblyReference.cache
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\obj\Debug\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Models\obj\Debug\ZipfItUp.Models.pdb
