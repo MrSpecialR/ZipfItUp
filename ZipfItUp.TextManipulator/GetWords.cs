@@ -56,13 +56,13 @@ namespace ZipfItUp.TextManipulator
                     break;
             }
             text = new string(text.Where(x=>char.IsWhiteSpace(x) || char.IsLetterOrDigit(x)).ToArray());
-            text = text.ToLower().Replace("\r", string.Empty).Replace("\n", string.Empty);
+            text = text.ToLower();
             return text;
         }
 
         public static List<string> ToList(string text)
         {
-            return text.Split(new char[] {' ', '\n'}, StringSplitOptions.RemoveEmptyEntries).ToList();
+            return text.Split(new char[] {' ', '\n', '\r'}, StringSplitOptions.RemoveEmptyEntries).Where(x=>x.Length < 450).ToList();
         }
     }
 }

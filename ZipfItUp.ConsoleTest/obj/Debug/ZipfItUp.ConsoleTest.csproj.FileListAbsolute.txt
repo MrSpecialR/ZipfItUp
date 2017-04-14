@@ -44,3 +44,5 @@ C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\IKVM.Open
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\IKVM.OpenJDK.XML.XPath.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\ZipfItUp.TextManipulator.dll.config
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\TikaOnDotNet.TextExtraction.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\EntityFramework.SqlServer.xml
