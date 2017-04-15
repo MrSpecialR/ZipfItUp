@@ -46,3 +46,6 @@ C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\ZipfItUp.
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\TikaOnDotNet.TextExtraction.pdb
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\ZipfItUp.Query.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\ZipfItUp.Query.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.ConsoleTest\bin\Debug\ZipfItUp.Query.dll.config

@@ -13,34 +13,25 @@ namespace ZipfItUp.ConsoleTest
     {
         static void Main(string[] args)
         {
+            // OccuranceContext context = new OccuranceContext();
+            // //context.DocumentWords.Count();
             //TextManipulator.GetWords.WordList();
-           // string path = "../../../InputFiles/80day10.txt";
-
-            string path = "../../../InputFiles/80day10.txt";
-            var wordlist = GetWords.WordList(path);
-            List<DocumentWord> words = ModelHelper.Initialize.TransformWords(wordlist.ToList());
-            
-            foreach (KeyValuePair<string, long> wordInfo in wordlist)
+            // string path = "../../../InputFiles/80day10.txt";
+            using (OccuranceContext context = new OccuranceContext())
             {
-                Console.WriteLine($"{wordInfo.Key} - {wordInfo.Value}");
+                DocumentWord word = Query.Document.GetMostUsedWord(context.Documents.First(), context);
+                Console.WriteLine($"{word.Word.WordString} - {word.Occurances}");
             }
-            OccuranceContext context = new OccuranceContext();
-            UserInput input = new UserInput()
-            {
-                DateUploaded = DateTime.Now,
-                Document = new Document()
-                {
-                    FileName = "80day10.txt",
-                    FilePath = path,
-                    WordCount = wordlist.Sum(x=>x.Value),
-                    DocumentType = DocumentType.Text,
-                    MostUsedWord = words[0].Word,
-                    Words = words
-                }
-            };
+            //UploadFileToDatabase("../../../InputFiles/80day10.txt");
+            }
 
-            context.UserInputs.Add(input);
-            context.SaveChanges();
+        private static void UploadFileToDatabase(string path)
+        { 
+            var wordlist = GetWords.WordList(path);
+            List<Word> words = ModelHelper.Transform.ToWords(wordlist.ToList());
+            using (OccuranceContext context = new OccuranceContext()) { 
+                ModelHelper.DatabaseInsert.DocumentWords(words, context, path);
+            }
         }
     }
 }

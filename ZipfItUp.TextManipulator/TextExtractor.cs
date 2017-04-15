@@ -14,6 +14,11 @@ namespace ZipfItUp.TextManipulator
         {
             return path.Substring(path.LastIndexOf('.') + 1, path.Length - path.LastIndexOf('.') - 1);
         }
+
+        public static string GetFileName(string path)
+        {
+            return path.Substring(path.LastIndexOf('\\') + 1, path.Length - path.LastIndexOf('\\') - 1);
+        }
         public static string FromTXT(string path)
         {
             return File.ReadAllText(path);

@@ -74,6 +74,10 @@
       <Project>{db933137-7f2e-4010-b5bd-2d1e22468836}</Project>
       <Name>ZipfItUp.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZipfItUp.Query\ZipfItUp.Query.csproj">
+      <Project>{b0b8fb8d-0b74-4ed9-bc57-d5f94366e8ce}</Project>
+      <Name>ZipfItUp.Query</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZipfItUp.TextManipulator\ZipfItUp.TextManipulator.csproj">
       <Project>{aef8a35c-825e-4a43-b4ab-6b8673b0c97e}</Project>
       <Name>ZipfItUp.TextManipulator</Name>

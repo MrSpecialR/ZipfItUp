@@ -13,12 +13,9 @@ namespace ZipfItUp.Models
         }
         [Key]
         public int Id { get; set; }
-        [Index(IsUnique = true), StringLength(450)]
+        [Index(IsUnique = true), Required, StringLength(450)]
         public string WordString { get; set; }
         public long Occurances { get; set; }
-        public int Rank { get; set; }
-        public long EstimatedOccurances { get; set; }
-
         public virtual ICollection<DocumentWord> Documents { get; set; }
     }
 }

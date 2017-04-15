@@ -1,0 +1,15 @@
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Query.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Query.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Query.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Data.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Data.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Data.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Models.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.Models.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\obj\Debug\ZipfItUp.Query.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\obj\Debug\ZipfItUp.Query.pdb

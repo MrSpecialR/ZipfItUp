@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Initialize.cs" />
+    <Compile Include="DatabaseInsert.cs" />
+    <Compile Include="Transform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\ZipfItUp.Models\ZipfItUp.Models.csproj">
       <Project>{db933137-7f2e-4010-b5bd-2d1e22468836}</Project>
       <Name>ZipfItUp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZipfItUp.TextManipulator\ZipfItUp.TextManipulator.csproj">
+      <Project>{aef8a35c-825e-4a43-b4ab-6b8673b0c97e}</Project>
+      <Name>ZipfItUp.TextManipulator</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

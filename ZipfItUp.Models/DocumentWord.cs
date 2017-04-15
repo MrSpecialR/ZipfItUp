@@ -13,7 +13,5 @@ namespace ZipfItUp.Models
         public virtual Word Word { get; set; }
         
         public long Occurances { get; set; }
-        public int Rank { get; set; }
-        public long EstimatedOccurances { get; set; }
     }
 }
