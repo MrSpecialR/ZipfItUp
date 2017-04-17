@@ -48,9 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document.cs" />
+    <Compile Include="Estimate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZipfItUp.DataTranfer\ZipfItUp.DataTranfer.csproj">
+      <Project>{3b64916d-62b3-4ba6-a302-545bc47b176e}</Project>
+      <Name>ZipfItUp.DataTranfer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZipfItUp.Data\ZipfItUp.Data.csproj">
       <Project>{4744d6f7-f01a-49e6-88d5-264a182a95dd}</Project>
       <Name>ZipfItUp.Data</Name>

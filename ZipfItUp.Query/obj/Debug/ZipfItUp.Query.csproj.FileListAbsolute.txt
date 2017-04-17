@@ -13,3 +13,10 @@ C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\obj\Debug\ZipfItUp.Query.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\obj\Debug\ZipfItUp.Query.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.DataTranfer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\AutoMapper.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\ZipfItUp.DataTranfer.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\bin\Debug\AutoMapper.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.Query\obj\Debug\ZipfItUp.Query.csprojResolveAssemblyReference.cache

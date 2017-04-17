@@ -1,4 +1,4 @@
-﻿@model ZipfItUp.DataTranfer.WordInfo
+﻿@model IEnumerable<ZipfItUp.Models.Word>
 
 @{
     ViewBag.Title = "Index";
@@ -15,14 +15,21 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: @ViewBag.Json,
+                labels: @ViewBag.WordsJSON,
                 datasets: [{
-                    label: '# of Votes',
-                    data: @Model.OccurancesJSON,
+                    label: '# of occurances',
+                    data: @ViewBag.OccurancesJSON,
                     backgroundColor: 'rgba(0, 99, 132, 0.2)',
                     borderColor: 'rgba(0,99,132,1)',
                     borderWidth: 1
-                }]
+                },
+                {
+                    label: '# of estimated occurances',
+                    data: @ViewBag.EstimatedOccurancesJSON,
+                    borderColor: 'rgba(255,99,132,1)',
+                    borderWidth: 1
+                }
+                ]
             },
             options: {
                 scales: {
@@ -43,15 +50,15 @@
     <table class="table">
         <tr>
             <th>
-              
+                @Html.DisplayNameFor(model=>model.WordString)
             </th>
             <th>
-               
+               @Html.DisplayNameFor(model=>model.Occurances)
             </th>
             <th></th>
         </tr>
 
-        @foreach (var item in Model.Words)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>

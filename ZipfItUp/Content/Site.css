@@ -22,7 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
-h1 {
+h1, h2 {
     font-family: 'Bree Serif', serif;
 }
 p{

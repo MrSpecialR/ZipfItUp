@@ -3,7 +3,7 @@
 }
 
 <div class="jumbotron">
-    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/fCn8zs912OE" frameborder="0" allowfullscreen></iframe>-->
+    <!---->
     <h1>What really is Zipf's Law?</h1>
     <p>The law states that there is a relationship between the frequency a given word is used and the rank it's given - based on the ammount of occurances it has. Moreover, the distribution follows a linear path on a log-log graph.</p>
     <p>
@@ -12,54 +12,49 @@
 </div>
 
 <div class="row">
-    <canvas id="lineChart" height=100px width="400px"></canvas>
-    
-    <script>
-        var ctx = document.getElementById("lineChart");
-        var myChart = new Chart(ctx, {
+   
+    <div class="col-md-4">
+        <h2>Analyze everything you like!</h2>
+        <p>
+            Would you like to find out what are the most used words in a certain book, movie, song, document or even your own text documents?
+            We offer users to upload files and check the word frequency and ranking!
+
+        </p>
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <canvas id="lineChart" height=400px width="400px"></canvas>
+    </div>      
+</div>
+
+<script>
+    var ctx = document.getElementById("lineChart");
+    var myChart = new Chart(ctx,
+        {
             type: 'line',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(0, 99, 132, 0.2)',
-                    borderColor: 'rgba(0,99,132,1)',
-                    borderWidth: 1
-                }]
+                labels: ["the", "of", "and", "to", "in", "a", "was", "is", "that", "he", "for", "as", "it"],
+                datasets: [
+                    {
+                        label: '# of occurances',
+                        data: [181076598, 92483221, 82566248, 63523836, 62563726, 58124387, 30532584, 24986607,23806447, 23604704, 21444928, 21138130, 20790111],
+                        backgroundColor: 'rgba(0, 99, 132, 0.2)',
+                        borderColor: 'rgba(0,99,132,1)',
+                        borderWidth: 1
+                    }
+                ]
             },
             options: {
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            }
                         }
-                    }]
+                    ]
                 }
             }
         });
-    </script>
-
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
-        </p>
-    </div>
-</div>
+</script>

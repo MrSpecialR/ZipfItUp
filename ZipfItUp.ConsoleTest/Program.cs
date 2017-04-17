@@ -17,13 +17,13 @@ namespace ZipfItUp.ConsoleTest
             // //context.DocumentWords.Count();
             //TextManipulator.GetWords.WordList();
             // string path = "../../../InputFiles/80day10.txt";
-            using (OccuranceContext context = new OccuranceContext())
+            /*using (OccuranceContext context = new OccuranceContext())
             {
                 DocumentWord word = Query.Document.GetMostUsedWord(context.Documents.First(), context);
                 Console.WriteLine($"{word.Word.WordString} - {word.Occurances}");
-            }
-            //UploadFileToDatabase("../../../InputFiles/80day10.txt");
-            }
+            }*/
+            UploadFileToDatabase("../../../InputFiles/102.txt");
+        }
 
         private static void UploadFileToDatabase(string path)
         { 

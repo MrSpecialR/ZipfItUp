@@ -62,7 +62,7 @@ namespace ZipfItUp.TextManipulator
 
         public static List<string> ToList(string text)
         {
-            return text.Split(new char[] {' ', '\n', '\r'}, StringSplitOptions.RemoveEmptyEntries).Where(x=>x.Length < 450).ToList();
+            return text.Split(new char[] {' ', '\n', '\r'}, StringSplitOptions.RemoveEmptyEntries).Select(x=>x.Trim()).Where(x=>x.Length < 100 && !string.IsNullOrEmpty(x)).ToList();
         }
     }
 }

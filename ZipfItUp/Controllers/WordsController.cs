@@ -19,9 +19,12 @@ namespace ZipfItUp.Controllers
         // GET: Words
         public ActionResult Index()
         {
-            WordInfo words = new WordInfo(db.Words.OrderByDescending(x => x.Occurances).Take(30).ToList());
-            ViewBag.Json = new MvcHtmlString(words.WordsJSON);
-            return View(words);
+            List<Word> Words = db.Words.OrderByDescending(x => x.Occurances).Take(30).ToList();
+            WordInfo words = new WordInfo(Words);
+            ViewBag.WordsJSON= new MvcHtmlString(words.WordsJSON);
+            ViewBag.OccurancesJSON = new MvcHtmlString(words.OccurancesJSON);
+            ViewBag.EstimatedOccurancesJSON = new MvcHtmlString(words.EstimatedOccurancesJSON);
+            return View(Words);
         }
 
         // GET: Words/Details/5
