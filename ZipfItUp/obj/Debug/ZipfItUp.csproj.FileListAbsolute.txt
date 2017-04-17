@@ -87,3 +87,17 @@ C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\System.Web.WebPages.Razor.x
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\obj\Debug\ZipfItUp.csprojResolveAssemblyReference.cache
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\obj\Debug\ZipfItUp.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\obj\Debug\ZipfItUp.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\EntityFramework.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\EntityFramework.SqlServer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Data.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Data.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Data.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Models.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.Models.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\EntityFramework.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\EntityFramework.SqlServer.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.DataTranfer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\ZipfItUp.DataTranfer.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\AutoMapper.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp\bin\AutoMapper.xml

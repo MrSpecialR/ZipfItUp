@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using ZipfItUp.DataTranfer;
+using ZipfItUp.Models;
 
 namespace ZipfItUp
 {
@@ -16,6 +19,7 @@ namespace ZipfItUp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Mapper.Initialize(config => config.CreateMap<Word, WordDTO>());
         }
     }
 }

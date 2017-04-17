@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.ConsoleTest", "Zip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.Query", "ZipfItUp.Query\ZipfItUp.Query.csproj", "{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.DataTranfer", "ZipfItUp.DataTranfer\ZipfItUp.DataTranfer.csproj", "{3B64916D-62B3-4BA6-A302-545BC47B176E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B64916D-62B3-4BA6-A302-545BC47B176E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B64916D-62B3-4BA6-A302-545BC47B176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B64916D-62B3-4BA6-A302-545BC47B176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B64916D-62B3-4BA6-A302-545BC47B176E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{AEF8A35C-825E-4A43-B4AB-6B8673B0C97E} = {3ACCAB1E-0FEE-47BD-9E3F-C1E6F8D07544}
 		{E7B3D54C-8E46-4F54-A5ED-4A20880326EF} = {3ACCAB1E-0FEE-47BD-9E3F-C1E6F8D07544}
 		{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE} = {3ACCAB1E-0FEE-47BD-9E3F-C1E6F8D07544}
+		{3B64916D-62B3-4BA6-A302-545BC47B176E} = {3ACCAB1E-0FEE-47BD-9E3F-C1E6F8D07544}
 	EndGlobalSection
 EndGlobal

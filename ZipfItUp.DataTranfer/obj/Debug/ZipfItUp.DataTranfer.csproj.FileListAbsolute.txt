@@ -1,0 +1,14 @@
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\ZipfItUp.DataTranfer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\ZipfItUp.DataTranfer.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\EntityFramework.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\ZipfItUp.Models.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\ZipfItUp.Models.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\EntityFramework.xml
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\obj\Debug\ZipfItUp.DataTranfer.csprojResolveAssemblyReference.cache
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\obj\Debug\ZipfItUp.DataTranfer.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\obj\Debug\ZipfItUp.DataTranfer.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\AutoMapper.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.DataTranfer\bin\Debug\AutoMapper.xml
