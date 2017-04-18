@@ -22,16 +22,9 @@ namespace ZipfItUp.ConsoleTest
                 DocumentWord word = Query.Document.GetMostUsedWord(context.Documents.First(), context);
                 Console.WriteLine($"{word.Word.WordString} - {word.Occurances}");
             }*/
-            UploadFileToDatabase("../../../InputFiles/102.txt");
+            UploadFileToDatabase("../../../InputFiles/alcott-little-261.txt");
         }
 
-        private static void UploadFileToDatabase(string path)
-        { 
-            var wordlist = GetWords.WordList(path);
-            List<Word> words = ModelHelper.Transform.ToWords(wordlist.ToList());
-            using (OccuranceContext context = new OccuranceContext()) { 
-                ModelHelper.DatabaseInsert.DocumentWords(words, context, path);
-            }
-        }
+       
     }
 }

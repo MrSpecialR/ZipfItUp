@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ZipfItUp.Data;
 using ZipfItUp.DataTranfer;
+using ZipfItUp.ModelHelper;
 using ZipfItUp.Models;
+using ZipfItUp.TextManipulator;
 
 namespace ZipfItUp.Controllers
 {
@@ -34,7 +37,7 @@ namespace ZipfItUp.Controllers
             {
                 return HttpNotFound();
             }
-            WordInfo words = new WordInfo(db.Documents.First(x=>x.Id==id).Words.OrderByDescending(x => x.Occurances).Take(30).Select(x=> new Word()
+            WordInfo words = new WordInfo(document.Words.OrderByDescending(x => x.Occurances).Take(30).Select(x=> new Word()
             {
                 WordString = x.Word.WordString,
                 Occurances = x.Occurances
@@ -42,6 +45,12 @@ namespace ZipfItUp.Controllers
             ViewBag.WordsJSON = new MvcHtmlString(words.WordsJSON);
             ViewBag.OccurancesJSON = new MvcHtmlString(words.OccurancesJSON);
             ViewBag.EstimatedOccurancesJSON = new MvcHtmlString(words.EstimatedOccurancesJSON);
+            DocumentWord MostUsedWord = Query.Document.GetMostUsedWord(document, db);
+            long OnceUsedWords = Query.Document.NumberOfWordsUsedJustOnce(document, db);
+            long TotalCount = document.Words.Count();
+            ViewBag.MostUsedWord = $"{MostUsedWord.Word.WordString} - makes up for {(100*MostUsedWord.Occurances/ document.WordCount):f2}%";
+            ViewBag.WordUsage = new MvcHtmlString($"[{TotalCount - OnceUsedWords}, {OnceUsedWords}]");
+
             return View(document);
         }
 
@@ -52,19 +61,22 @@ namespace ZipfItUp.Controllers
         }
 
         // POST: Documents/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FileName,DocumentType,FilePath,WordCount,DateUploaded")] Document document)
+        public ActionResult Create([Bind(Include = "Name,DocumentType,UploadedFile")] FileUpload document)
         {
+
             if (ModelState.IsValid)
             {
-                db.Documents.Add(document);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (document.UploadedFile != null)
+                {
+                    string fileName = document.UploadedFile.FileName;
+                    string path = Server.MapPath($"~/UploadedFiles/{fileName}");
+                    document.UploadedFile.SaveAs(path);
+                    DatabaseInsert.UploadFileToDatabase(path);
+                    return RedirectToAction("Index");
+                }
             }
-
             return View(document);
         }
 
@@ -84,8 +96,6 @@ namespace ZipfItUp.Controllers
         }
 
         // POST: Documents/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FileName,DocumentType,FilePath,WordCount,DateUploaded")] Document document)
@@ -120,6 +130,8 @@ namespace ZipfItUp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Document document = db.Documents.Find(id);
+            List<DocumentWord> documentWords = document.Words.ToList();
+            DatabaseDelete.DeleteDocumentWords(documentWords, db);
             db.Documents.Remove(document);
             db.SaveChanges();
             return RedirectToAction("Index");

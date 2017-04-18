@@ -14,5 +14,10 @@ namespace ZipfItUp.Query
         {
             return context.Documents.First(x => x.Id == doc.Id).Words.First();
         }
+
+        public static int NumberOfWordsUsedJustOnce(Models.Document doc, OccuranceContext context)
+        {
+            return context.Documents.First(x => x.Id == doc.Id).Words.Count(x => x.Occurances == 1);
+        }
     }
 }

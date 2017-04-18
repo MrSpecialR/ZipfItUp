@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.ConsoleTest", "Zip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.Query", "ZipfItUp.Query\ZipfItUp.Query.csproj", "{B0B8FB8D-0B74-4ED9-BC57-D5F94366E8CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.DataTranfer", "ZipfItUp.DataTranfer\ZipfItUp.DataTranfer.csproj", "{3B64916D-62B3-4BA6-A302-545BC47B176E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipfItUp.DataTransfer", "ZipfItUp.DataTranfer\ZipfItUp.DataTransfer.csproj", "{3B64916D-62B3-4BA6-A302-545BC47B176E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

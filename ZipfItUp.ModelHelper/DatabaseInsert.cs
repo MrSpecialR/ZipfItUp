@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using ZipfItUp.Data;
 using ZipfItUp.Models;
+using ZipfItUp.TextManipulator;
 
 namespace ZipfItUp.ModelHelper
 {
@@ -12,6 +13,7 @@ namespace ZipfItUp.ModelHelper
         public static void Words(List<Word> words, OccuranceContext context)
         {
             List<Word> AllWords = context.Words.ToList();
+            List<Word> WordsToInsert = new List<Word>();
             foreach (Word word in words)
             {
                 Word exists = AllWords.FirstOrDefault(x => x.WordString == word.WordString);
@@ -21,9 +23,10 @@ namespace ZipfItUp.ModelHelper
                 }
                 else
                 {
-                    context.Words.Add(word);
+                    WordsToInsert.Add(word);
                 }
             }
+            context.Words.AddRange(WordsToInsert);
             context.SaveChanges();
         }
         public static void DocumentWords(List<Word> words, OccuranceContext context, string path)
@@ -57,6 +60,16 @@ namespace ZipfItUp.ModelHelper
                    FileName = TextManipulator.TextExtractor.GetFileName(path),
                    DateUploaded = DateTime.Now
             };
+        }
+
+        public static void UploadFileToDatabase(string path)
+        {
+            var wordlist = GetWords.WordList(path);
+            List<Word> words = ModelHelper.Transform.ToWords(wordlist.ToList());
+            using (OccuranceContext context = new OccuranceContext())
+            {
+                DocumentWords(words, context, path);
+            }
         }
     }
 }

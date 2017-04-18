@@ -8,9 +8,9 @@ namespace ZipfItUp.Models
     public enum DocumentType
     {
         Text,
-        Lyric,
-        Subtitle,
-        Rich,
+        Lyrics,
+        Subtitles,
+        RichText,
         WordDoc,
         PortableDoc,
         Other

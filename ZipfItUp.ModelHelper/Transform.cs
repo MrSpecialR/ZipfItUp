@@ -60,6 +60,7 @@ namespace ZipfItUp.ModelHelper
             return type;
         }
 
+
         public static long EstimateOccurances(long MaxOccuringWord, int Rank)
         {
             long Occurances = (long) Math.Ceiling((1.0m / Rank) * MaxOccuringWord);

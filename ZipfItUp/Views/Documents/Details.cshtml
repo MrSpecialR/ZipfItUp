@@ -12,85 +12,114 @@
     <hr />
     <div class="row">
         <canvas id="lineChart" height=100px width="400px"></canvas>
-
-        <script>
-        var ctx = document.getElementById("lineChart");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: @ViewBag.WordsJSON,
-                datasets: [{
-                        label: '# of  occurances',
-                        data: @ViewBag.OccurancesJSON,
-                        backgroundColor: 'rgba(0, 99, 132, 0.2)',
-                        borderColor: 'rgba(0,99,132,1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: '# of estimated occurances',
-                    data: @ViewBag.EstimatedOccurancesJSON,
-                    borderColor: 'rgba(255,99,132,1)',
-                    borderWidth: 2
-                        
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
-        </script>
     </div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FileName)
-        </dt>
+    <div class="row">
+        <div class="col-lg-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FileName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FileName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FileName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocumentType)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DocumentType)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocumentType)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DocumentType)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FilePath)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FilePath)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FilePath)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FilePath)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WordCount)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.WordCount)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WordCount)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.WordCount)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateUploaded)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateUploaded)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateUploaded)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DateUploaded)
+                </dd>
 
-    </dl>
+            </dl>
+        </div>
+        <div class="col-lg-6">
+            <p>@ViewBag.MostUsedWord</p>
+            <div style="height: 400px; width:400px">
+                <canvas id="pieChart" width="10" height="10"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<script>
+            var ctx = document.getElementById("lineChart");
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: @ViewBag.WordsJSON,
+                    datasets: [{
+                            label: '# of  occurances',
+                            data: @ViewBag.OccurancesJSON,
+                            backgroundColor: 'rgba(0, 99, 132, 0.2)',
+                            borderColor: 'rgba(0,99,132,1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: '# of estimated occurances',
+                            data: @ViewBag.EstimatedOccurancesJSON,
+                            borderColor: 'rgba(255,99,132,1)',
+                            borderWidth: 2
+
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+    });
+
+                var pieChart = document.getElementById("pieChart");
+                var myPieChart = new Chart(pieChart, {
+                type: 'pie',
+                data: {
+                    labels: ["Total", "Once"],
+                    datasets: [{
+                            label: '# of  occurances',
+                            data: @ViewBag.WordUsage,
+                            borderColor: ['rgba(0,99,132,1)', 'rgba(255,99,132,1)'],
+                            backgroundColor: ['rgba(0,99,132,0.2)', 'rgba(255,99,132,0.2)'],
+                            borderWidth: 1
+                    }],
+                    options: {
+                        maintainAspectRatio: true,
+                        responsive: false
+                    }
+                }
+            });
+</script>
