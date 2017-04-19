@@ -13,7 +13,7 @@ namespace ZipfItUp.ConsoleTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(TextExtractor.GetTimeDiffernace(DateTime.Parse("4/12/2017 6:32:16 PM")));
+            Console.WriteLine(TextExtractor.GenerateFileName(".jpg", "jASDooo"));
         }
 
        

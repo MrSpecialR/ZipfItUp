@@ -35,3 +35,8 @@ C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\IKVM.
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\TikaOnDotNet.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\TikaOnDotNet.TextExtraction.dll
 C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\TikaOnDotNet.TextExtraction.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\ZipfItUp.Models.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\EntityFramework.dll
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\ZipfItUp.Models.pdb
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\ZipfItUp.Models.dll.config
+C:\Users\Dell Inspiron\Desktop\ZipfItUp\ZipfItUp.TextManipulator\bin\Debug\EntityFramework.xml

@@ -132,6 +132,49 @@ namespace ZipfItUp.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Search()
+        {
+            ViewBag.NothingFound = true;
+            ViewBag.GetAction = true;
+            return View();
+        }
+
+        [HttpPost, ActionName("Search")]
+        public ActionResult Search([Bind(Include = "search")]SearchQuery query)
+        {
+            string word = new string(query.Search.Where(char.IsLetter).ToArray()).ToLower();
+            ViewBag.GetAction = false;
+            Word wordObject = db.Words.FirstOrDefault(x => x.WordString == word);
+            if (wordObject == null)
+            {
+                ViewBag.NothingFound = true;
+                return View();
+            }
+            ViewBag.NothingFound = false;
+            int overallRank = db.Words.OrderByDescending(x => x.Occurances).ToList().FindIndex(x=>x.WordString==wordObject.WordString) + 1;
+            string output = $"<h2>Overall ranking: {overallRank} with {wordObject.Occurances} occurances. </h2><br/>";
+            output += $"<h3>Found {wordObject.WordString} in {wordObject.Documents.Count()} documents: </h3>";
+            List<WordRanking> rank = new List<WordRanking>();
+            foreach (DocumentWord doc in wordObject.Documents.ToList())
+            {
+                int id = doc
+                    .Document
+                    .Words
+                    .OrderByDescending(x=>x.Occurances)
+                    .ToList()
+                    .FindIndex(x => x.Word.WordString == doc.Word.WordString) + 1;
+                rank.Add(new WordRanking()
+                {
+                    Rank = id,
+                    DocumentId = doc.DocumentId,
+                    FileName = doc.Document.FileName,
+                    Occurances = doc.Occurances
+                });
+            }
+            ViewBag.Result = new MvcHtmlString(output);
+            ViewBag.Documents = rank;
+            return View();
+        }
 
         protected override void Dispose(bool disposing)
         {

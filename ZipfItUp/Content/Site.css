@@ -22,10 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
-h1, h2 {
+h1, h2, h3, h4, th {
     font-family: 'Bree Serif', serif;
 }
-p{
+p, label, td, li{
    
     font-family: 'Droid Sans', sans-serif;
 }

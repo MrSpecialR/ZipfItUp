@@ -138,5 +138,14 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZipfItUp.Models\ZipfItUp.Models.csproj">
+      <Project>{db933137-7f2e-4010-b5bd-2d1e22468836}</Project>
+      <Name>ZipfItUp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

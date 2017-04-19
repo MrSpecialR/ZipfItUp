@@ -71,25 +71,27 @@
     }
 
 </table>
-<p>
-    @Html.ActionLink("Back to details.", "Details", new {id= ViewBag.Id})
-    
-       
-    @if (!ViewBag.IsFirstPage)
-    {
-        @Html.ActionLink("Previous Page.", "ListWords", new {id = ViewBag.Id, page = ViewBag.Page - 1}, new { @class = "btn btn-info" })
-    }
-    else
-    {
-        @Html.ActionLink("Previous Page.", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page - 1 }, new { @class = "disabled btn btn-danger" })
-    }
+    <div>
+        <div class="pull-left form-inline">
+            @Html.ActionLink("Back to details.", "Details", new { id = ViewBag.Id }, new { @class = "btn btn-danger" })
+        </div>
+        <div class="pull-right form-inline">
+            @if (!ViewBag.IsFirstPage)
+            {
+                @Html.ActionLink("Previous Page", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page - 1 }, new { @class = "btn btn-info" })
+            }
+            else
+            {
+                @Html.ActionLink("Previous Page", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page - 1 }, new { @class = "disabled btn btn-danger" })
+            }
 
-    @if (!ViewBag.IsLastPage)
-    {
-        @Html.ActionLink("Next Page.", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page + 1 }, new { @class = "btn btn-info" })
-    }
-    else
-    {
-        @Html.ActionLink("Next Page.", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page + 1 }, new { @class = "disabled btn btn-danger" })
-    }
-</p>
+            @if (!ViewBag.IsLastPage)
+            {
+                @Html.ActionLink("Next Page", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page + 1 }, new { @class = "btn btn-info" })
+            }
+            else
+            {
+                @Html.ActionLink("Next Page", "ListWords", new { id = ViewBag.Id, page = ViewBag.Page + 1 }, new { @class = "disabled btn btn-danger" })
+            }
+        </div>
+    </div>

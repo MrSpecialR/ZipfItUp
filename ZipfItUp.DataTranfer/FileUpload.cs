@@ -9,5 +9,7 @@ namespace ZipfItUp.DataTranfer
     {
         public string Name { get; set; }
         public HttpPostedFileBase UploadedFile { get; set; }
+        public string UserText { get; set; }
+        public DocumentType DocType { get; set; }
     }
 }

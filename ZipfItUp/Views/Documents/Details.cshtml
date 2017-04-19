@@ -51,7 +51,7 @@
             </dl>
             
             <p>Most Used Word: @ViewBag.MostUsedWord</p>
-            <p>@Html.ActionLink("List all words", "ListWords", new {id=Model.Id, page = 1 })</p>
+            <p>@Html.ActionLink("List all words", "ListWords", new {id=Model.Id, page = 1 }, new {@class="btn btn-success pull-right"})</p>
         </div>
         <div class="col-lg-6">
             
@@ -62,8 +62,7 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new {@class="btn-sm btn-danger"})
 </p>
 
 <script>

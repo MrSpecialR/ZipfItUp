@@ -68,7 +68,7 @@ namespace ZipfItUp.Controllers
         // POST: Documents/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,DocumentType,UploadedFile")] FileUpload document)
+        public ActionResult Create([Bind(Include = "Name,DocType,UploadedFile, UserText")] FileUpload document)
         {
 
             if (ModelState.IsValid)
@@ -76,40 +76,34 @@ namespace ZipfItUp.Controllers
                 if (document.UploadedFile != null)
                 {
                     string fileName = document.UploadedFile.FileName;
-                    string path = Server.MapPath($"~/UploadedFiles/{fileName}");
+                    string path = "";
+                    if (string.IsNullOrEmpty(document.Name))
+                    {
+                        path = Server.MapPath($"~/UploadedFiles/{TextExtractor.GenerateFileName(fileName)}");
+                    }
+                    else
+                    {
+                        path = Server.MapPath($"~/UploadedFiles/{TextExtractor.GenerateFileName(fileName, document.Name)}");
+                    }
                     document.UploadedFile.SaveAs(path);
                     DatabaseInsert.UploadFileToDatabase(path);
                     return RedirectToAction("Index");
+                } else if (!string.IsNullOrEmpty(document.UserText))
+                {
+                    
+                    string path = "";
+                    if (string.IsNullOrEmpty(document.Name))
+                    {
+                        path = Server.MapPath($"~/UploadedFiles/{TextExtractor.GenerateFileName("." + TextExtractor.GetExtensionFromEnum(document.DocType))}");
+                    }
+                    else
+                    {
+                        path = Server.MapPath($"~/UploadedFiles/{TextExtractor.GenerateFileName(TextExtractor.GetExtensionFromEnum(document.DocType), document.Name)}");
+                    }
+                    System.IO.File.WriteAllText(path, document.UserText);
+                    DatabaseInsert.UploadFileToDatabase(path);
+                    return RedirectToAction("Index");
                 }
-            }
-            return View(document);
-        }
-
-        // GET: Documents/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Document document = db.Documents.Find(id);
-            if (document == null)
-            {
-                return HttpNotFound();
-            }
-            return View(document);
-        }
-
-        // POST: Documents/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FileName,DocumentType,FilePath,WordCount,DateUploaded")] Document document)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(document).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
             }
             return View(document);
         }
@@ -189,6 +183,17 @@ namespace ZipfItUp.Controllers
             ViewBag.IsLastPage = page == numberOfPages;
 
             return View(words);
+        }
+
+        public ActionResult DocumentType()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName("DocumentType")]
+        public ActionResult DocumentType([Bind(Include ="DocumentType")] DocumentType doc)
+        {
+            throw new NotImplementedException();
         }
     }
 }
