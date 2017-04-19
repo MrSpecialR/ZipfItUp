@@ -33,14 +33,6 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.FilePath)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.FilePath)
-                </dd>
-
-                <dt>
                     @Html.DisplayNameFor(model => model.WordCount)
                 </dt>
 
@@ -57,9 +49,12 @@
                 </dd>
 
             </dl>
+            
+            <p>Most Used Word: @ViewBag.MostUsedWord</p>
+            <p>@Html.ActionLink("List all words", "ListWords", new {id=Model.Id, page = 1 })</p>
         </div>
         <div class="col-lg-6">
-            <p>@ViewBag.MostUsedWord</p>
+            
             <div style="height: 400px; width:400px">
                 <canvas id="pieChart" width="10" height="10"></canvas>
             </div>
@@ -108,9 +103,8 @@
                 var myPieChart = new Chart(pieChart, {
                 type: 'pie',
                 data: {
-                    labels: ["Total", "Once"],
+                    labels: ["Words appearing more than once", "Words appearing just once"],
                     datasets: [{
-                            label: '# of  occurances',
                             data: @ViewBag.WordUsage,
                             borderColor: ['rgba(0,99,132,1)', 'rgba(255,99,132,1)'],
                             backgroundColor: ['rgba(0,99,132,0.2)', 'rgba(255,99,132,0.2)'],

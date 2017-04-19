@@ -15,9 +15,29 @@ namespace ZipfItUp.TextManipulator
             return path.Substring(path.LastIndexOf('.') + 1, path.Length - path.LastIndexOf('.') - 1);
         }
 
+        public static string GetTimeDiffernace(DateTime date)
+        {
+            
+            long minutes = (long)Math.Floor((DateTime.Now - date).TotalMinutes);
+            if (minutes > 60)
+            {
+                int hours = (int) Math.Floor((DateTime.Now - date).TotalHours);
+                if (hours > 24)
+                {
+                    int days = (int) Math.Floor((DateTime.Now - date).TotalDays);
+                    return $"Uploaded {days} days ago.";
+                }
+                return $"Uploaded {hours} hours ago.";
+            }
+            return $"Uploaded {minutes} minutes ago."; ;
+        }
+
         public static string GetFileName(string path)
         {
-            return path.Substring(path.LastIndexOf('/') + 1, path.Length - path.LastIndexOf('/') - 1);
+            int lastIndex = path.LastIndexOf('/') > path.LastIndexOf('\\')
+                ? path.LastIndexOf('/')
+                : path.LastIndexOf('\\');
+            return path.Substring(lastIndex + 1, path.Length - lastIndex - 1);
         }
         public static string FromTXT(string path)
         {

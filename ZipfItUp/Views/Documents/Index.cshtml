@@ -19,9 +19,6 @@
             @Html.DisplayNameFor(model => model.DocumentType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FilePath)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.WordCount)
         </th>
         <th>
@@ -39,13 +36,10 @@
             @Html.DisplayFor(modelItem => item.DocumentType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FilePath)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.WordCount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateUploaded)
+            @ZipfItUp.TextManipulator.TextExtractor.GetTimeDiffernace(item.DateUploaded)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

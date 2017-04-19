@@ -32,23 +32,28 @@ namespace ZipfItUp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Document document = db.Documents.Find(id);
+
             if (document == null)
             {
                 return HttpNotFound();
             }
-            WordInfo words = new WordInfo(document.Words.OrderByDescending(x => x.Occurances).Take(30).Select(x=> new Word()
+
+            WordInfo words = new WordInfo(document.Words.OrderByDescending(x => x.Occurances).Take(50).Select(x=> new Word()
             {
                 WordString = x.Word.WordString,
                 Occurances = x.Occurances
             }).ToList());
-            ViewBag.WordsJSON = new MvcHtmlString(words.WordsJSON);
-            ViewBag.OccurancesJSON = new MvcHtmlString(words.OccurancesJSON);
-            ViewBag.EstimatedOccurancesJSON = new MvcHtmlString(words.EstimatedOccurancesJSON);
             DocumentWord MostUsedWord = Query.Document.GetMostUsedWord(document, db);
             long OnceUsedWords = Query.Document.NumberOfWordsUsedJustOnce(document, db);
             long TotalCount = document.Words.Count();
-            ViewBag.MostUsedWord = $"{MostUsedWord.Word.WordString} - makes up for {(100*MostUsedWord.Occurances/ document.WordCount):f2}%";
+
+
+            ViewBag.WordsJSON = new MvcHtmlString(words.WordsJSON);
+            ViewBag.OccurancesJSON = new MvcHtmlString(words.OccurancesJSON);
+            ViewBag.EstimatedOccurancesJSON = new MvcHtmlString(words.EstimatedOccurancesJSON);
+            ViewBag.MostUsedWord = new MvcHtmlString($"<strong>{MostUsedWord.Word.WordString}</strong> - makes up for {(100*MostUsedWord.Occurances/ document.WordCount):f2}% of all words used.");
             ViewBag.WordUsage = new MvcHtmlString($"[{TotalCount - OnceUsedWords}, {OnceUsedWords}]");
 
             return View(document);
@@ -144,6 +149,46 @@ namespace ZipfItUp.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult ListWords(int? id, int? page)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Document doc = db.Documents.First(x => id == x.Id);
+            if (doc == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (page == null)
+            {
+                page = 1;
+            }
+            int numberOfPages = (int) Math.Ceiling((double)doc.Words.Count()/30);
+            if (page > numberOfPages)
+            {
+                return HttpNotFound();
+            }
+
+            var words = doc.Words.OrderByDescending(x=>x.Occurances).Skip((page.Value -1)*30).Take(30).Select(x=> new Word()
+            {
+                WordString = x.Word.WordString,
+                Occurances = x.Occurances
+            });
+
+            WordInfo WordInfo = new WordInfo(words.ToList());
+            ViewBag.WordsJSON = new MvcHtmlString(WordInfo.WordsJSON);
+            ViewBag.OccurancesJSON = new MvcHtmlString(WordInfo.OccurancesJSON);
+
+            ViewBag.Id = id;
+            ViewBag.Page = page;
+            ViewBag.IsFirstPage = page == 1;
+            ViewBag.IsLastPage = page == numberOfPages;
+
+            return View(words);
         }
     }
 }

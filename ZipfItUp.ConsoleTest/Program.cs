@@ -13,16 +13,7 @@ namespace ZipfItUp.ConsoleTest
     {
         static void Main(string[] args)
         {
-            // OccuranceContext context = new OccuranceContext();
-            // //context.DocumentWords.Count();
-            //TextManipulator.GetWords.WordList();
-            // string path = "../../../InputFiles/80day10.txt";
-            /*using (OccuranceContext context = new OccuranceContext())
-            {
-                DocumentWord word = Query.Document.GetMostUsedWord(context.Documents.First(), context);
-                Console.WriteLine($"{word.Word.WordString} - {word.Occurances}");
-            }*/
-            UploadFileToDatabase("../../../InputFiles/alcott-little-261.txt");
+            Console.WriteLine(TextExtractor.GetTimeDiffernace(DateTime.Parse("4/12/2017 6:32:16 PM")));
         }
 
        

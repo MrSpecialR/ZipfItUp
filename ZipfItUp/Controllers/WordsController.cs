@@ -17,13 +17,28 @@ namespace ZipfItUp.Controllers
         private OccuranceContext db = new OccuranceContext();
 
         // GET: Words
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            List<Word> Words = db.Words.OrderByDescending(x => x.Occurances).Take(30).ToList();
+            if (page == null)
+            {
+                page = 1;
+            }
+            int pageCount = (int)Math.Ceiling((double)db.Words.Count()/30);
+            if (page > pageCount)
+            {
+                return HttpNotFound();
+            }
+
+            List<Word> Words = db.Words.OrderByDescending(x => x.Occurances).Skip((page.Value-1)*30).Take(30).ToList();
             WordInfo words = new WordInfo(Words);
             ViewBag.WordsJSON= new MvcHtmlString(words.WordsJSON);
             ViewBag.OccurancesJSON = new MvcHtmlString(words.OccurancesJSON);
             ViewBag.EstimatedOccurancesJSON = new MvcHtmlString(words.EstimatedOccurancesJSON);
+
+            ViewBag.Page = page;
+            ViewBag.IsFirstPage = page == 1;
+            ViewBag.IsLastPage = page == pageCount;
+
             return View(Words);
         }
 

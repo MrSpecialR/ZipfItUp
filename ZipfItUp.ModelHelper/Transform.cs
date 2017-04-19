@@ -42,16 +42,16 @@ namespace ZipfItUp.ModelHelper
                     type = DocumentType.PortableDoc;
                     break;
                 case "rtf":
-                    type = DocumentType.Rich;
+                    type = DocumentType.RichText;
                     break;
                 case "txt":
                     type = DocumentType.Text;
                     break;
                 case "lyr":
-                    type = DocumentType.Lyric;
+                    type = DocumentType.Lyrics;
                     break;
                 case "srt":
-                    type = DocumentType.Subtitle;
+                    type = DocumentType.Subtitles;
                     break;
                 default:
                     type = DocumentType.Other;
